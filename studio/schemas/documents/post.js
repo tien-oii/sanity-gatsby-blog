@@ -6,6 +6,11 @@ export default {
   title: 'Blog Post',
   fields: [
     {
+      name: 'myField',
+      type: 'string',
+      title: 'Test Field'
+    },
+    {
       name: 'title',
       type: 'string',
       title: 'Title',
