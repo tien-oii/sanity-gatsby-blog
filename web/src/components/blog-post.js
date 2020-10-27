@@ -36,10 +36,10 @@ function BlogPost (props) {
             {_rawBody && <PortableText blocks={_rawBody} />}
 
             {/* document part */}
-            <table className='document-part'>
+            {myDocuments && myDocuments.length ? (<table className={styles.documentPart}>
               <thead>
-                <th className='th-first'>Order</th>
-                <th className='th-last'>Files</th>
+                <th className={styles.thFirst}>Order</th>
+                <th>Files</th>
               </thead>
 
               <tbody>
@@ -52,8 +52,9 @@ function BlogPost (props) {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table>) : ''}
           </div>
+
           <aside className={styles.metaContent}>
             {publishedAt && (
               <div className={styles.publishedAt}>

@@ -88,9 +88,21 @@
   margin: 0.5rem 0 0;
 }
 
-.document-part td {
-  border: 1px solid #CCC;
+.documentPart th,
+.documentPart td {
+  border: 1px solid #e5e5e5;
 }
-.document-part {
+.documentPart {
   width: 100%;
+
+  @nest & .thFirst {
+    width: 15%;
+  }
+
+  @nest & tbody tr td:first-child {
+    text-align: center;
+  }
+
+  @nest & tr:nth-child(even) {background-color: #FFF}
+  @nest & tr:nth-child(odd) {background-color: #EEE}
 }
