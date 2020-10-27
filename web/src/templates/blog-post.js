@@ -53,6 +53,12 @@ export const query = graphql`
           name
         }
       }
+      myDocuments {
+        asset {
+          url
+          originalFilename
+        }
+      }
     }
   }
 `

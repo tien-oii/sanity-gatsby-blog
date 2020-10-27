@@ -87,3 +87,10 @@
   composes: base from './typography.module.css';
   margin: 0.5rem 0 0;
 }
+
+.document-part td {
+  border: 1px solid #CCC;
+}
+.document-part {
+  width: 100%;
+}

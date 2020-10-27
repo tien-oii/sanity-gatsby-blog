@@ -2,6 +2,9 @@ export default {
     name: 'fileReference',
     title: 'File Reference',
     type: 'file',
+    initialValue: {
+        url: 'asset.url'
+    },
     fields: [
         {
             name: 'url',

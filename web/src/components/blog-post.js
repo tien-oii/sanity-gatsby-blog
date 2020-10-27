@@ -9,7 +9,11 @@ import AuthorList from './author-list'
 import styles from './blog-post.module.css'
 
 function BlogPost (props) {
-  const {_rawBody, authors, categories, title, mainImage, publishedAt} = props
+  const {_rawBody, authors, categories, title, mainImage, publishedAt, myDocuments} = props
+
+  console.log('>>>>> documents: ', myDocuments);
+
+
   return (
     <article className={styles.root}>
       {mainImage && mainImage.asset && (
@@ -53,6 +57,26 @@ function BlogPost (props) {
           </aside>
         </div>
       </Container>
+
+      {/* document part */}
+      <table className='document-part'>
+        <thead>
+          <th className='th-first'>Order</th>
+          <th className='th-last'>Files</th>
+        </thead>
+
+        <tbody>
+          {myDocuments.map((row, index) => (
+            <tr>
+              <td>{index+1}</td>
+              <td>
+                <a href={row.asset.url} target='_blank'>{row.asset.originalFilename}</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
     </article>
   )
 }
