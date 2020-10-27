@@ -71,7 +71,18 @@ export default {
       name: 'body',
       type: 'bodyPortableText',
       title: 'Body'
+    },
+    {
+      name: 'myDocuments',
+      title: 'Documents',
+      type: 'array',
+      of: [
+        // {type: 'file'}
+        // {type: 'fileReference'}
+        {type: 'fileReference'}
+      ]
     }
+
   ],
   orderings: [
     {
