@@ -56,27 +56,26 @@ function BlogPost (props) {
             )}
           </aside>
         </div>
+
+        {/* document part */}
+        <table className='document-part'>
+          <thead>
+            <th className='th-first'>Order</th>
+            <th className='th-last'>Files</th>
+          </thead>
+
+          <tbody>
+            {myDocuments.map((row, index) => (
+              <tr>
+                <td>{index+1}</td>
+                <td>
+                  <a href={row.asset.url} target='_blank'>{row.asset.originalFilename}</a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </Container>
-
-      {/* document part */}
-      <table className='document-part'>
-        <thead>
-          <th className='th-first'>Order</th>
-          <th className='th-last'>Files</th>
-        </thead>
-
-        <tbody>
-          {myDocuments.map((row, index) => (
-            <tr>
-              <td>{index+1}</td>
-              <td>
-                <a href={row.asset.url} target='_blank'>{row.asset.originalFilename}</a>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
     </article>
   )
 }
