@@ -34,6 +34,25 @@ function BlogPost (props) {
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
             {_rawBody && <PortableText blocks={_rawBody} />}
+
+            {/* document part */}
+            <table className='document-part'>
+              <thead>
+                <th className='th-first'>Order</th>
+                <th className='th-last'>Files</th>
+              </thead>
+
+              <tbody>
+                {myDocuments.map((row, index) => (
+                  <tr>
+                    <td>{index+1}</td>
+                    <td>
+                      <a href={row.asset.url} target='_blank'>{row.asset.originalFilename}</a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
           <aside className={styles.metaContent}>
             {publishedAt && (
@@ -56,25 +75,6 @@ function BlogPost (props) {
             )}
           </aside>
         </div>
-
-        {/* document part */}
-        <table className='document-part'>
-          <thead>
-            <th className='th-first'>Order</th>
-            <th className='th-last'>Files</th>
-          </thead>
-
-          <tbody>
-            {myDocuments.map((row, index) => (
-              <tr>
-                <td>{index+1}</td>
-                <td>
-                  <a href={row.asset.url} target='_blank'>{row.asset.originalFilename}</a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
       </Container>
     </article>
   )
