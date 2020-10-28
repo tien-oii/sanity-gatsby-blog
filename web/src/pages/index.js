@@ -58,7 +58,6 @@ export const query = graphql`
           slug {
             current
           }
-          myField
         }
       }
     }

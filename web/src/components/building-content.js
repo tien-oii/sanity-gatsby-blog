@@ -6,34 +6,27 @@ import PortableText from './portableText'
 import Container from './container'
 import AuthorList from './author-list'
 
-import styles from './blog-post.module.css'
+import styles from './building-content.module.css'
 
-function BlogPost (props) {
-  const {_rawBody, authors, categories, title, mainImage, publishedAt, myDocuments} = props
+function BuildingContent (props) {
+  const {_rawBody, title, _updatedAt, documents} = props
+
+  const {format} = require('date-fns')
+  const updatedDate = format(_updatedAt, 'YYYY/MM/DD')
+  console.log('>>>>> documents: ', documents, updatedDate);
+
 
   return (
     <article className={styles.root}>
-      {mainImage && mainImage.asset && (
-        <div className={styles.mainImage}>
-          <img
-            src={imageUrlFor(buildImageObj(mainImage))
-              .width(1200)
-              .height(Math.floor((9 / 16) * 1200))
-              .fit('crop')
-              .auto('format')
-              .url()}
-            alt={mainImage.alt}
-          />
-        </div>
-      )}
       <Container>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
+            <div>Updated on: {updatedDate}</div>
             {_rawBody && <PortableText blocks={_rawBody} />}
 
             {/* document part */}
-            {myDocuments && myDocuments.length ? (<table className={styles.documentPart}>
+            {documents && documents.length ? (<table className={styles.documentPart}>
               <thead>
                 <tr>
                     <th className={styles.thFirst}>Order</th>
@@ -42,8 +35,8 @@ function BlogPost (props) {
               </thead>
 
               <tbody>
-                {myDocuments.map((row, index) => (
-                  <tr>
+                {documents.map((row, index) => (
+                  <tr key={index+1}>
                     <td>{index+1}</td>
                     <td>
                       <a href={row.asset.url} target='_blank'>{row.asset.originalFilename}</a>
@@ -54,7 +47,7 @@ function BlogPost (props) {
             </table>) : ''}
           </div>
 
-          <aside className={styles.metaContent}>
+          {/* <aside className={styles.metaContent}>
             {publishedAt && (
               <div className={styles.publishedAt}>
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
@@ -73,11 +66,12 @@ function BlogPost (props) {
                 </ul>
               </div>
             )}
-          </aside>
+          </aside> */}
+
         </div>
       </Container>
     </article>
   )
 }
 
-export default BlogPost
+export default BuildingContent
