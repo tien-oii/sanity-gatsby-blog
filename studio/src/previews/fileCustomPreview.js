@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { MdInsertDriveFile } from 'react-icons/md'
-import IconContext from 'react-icons'
 
 export default class FileCustomPreview extends React.Component {
   static propTypes = {
