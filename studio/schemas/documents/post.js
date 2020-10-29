@@ -72,14 +72,7 @@ export default {
       title: 'Documents',
       type: 'array',
       of: [
-        // {type: 'file'}
         {type: 'fileReference'}
-        // {
-        //   type: 'reference',
-        //   to: {
-        //     type: 'fileReference'
-        //   }
-        // }
       ]
     }
 

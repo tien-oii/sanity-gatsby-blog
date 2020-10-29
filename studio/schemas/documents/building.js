@@ -31,7 +31,7 @@ export default {
             type: 'array',
             title: 'Documents',
             of: [
-                {type: 'file'}
+                {type: 'fileReference'}
             ]
         }
     ],

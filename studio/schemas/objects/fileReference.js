@@ -1,33 +1,32 @@
 import React from 'react'
+import FileCustomPreview from '../../src/previews/fileCustomPreview'
 
 export default {
     name: 'fileReference',
     title: 'File Reference',
     type: 'file',
-
-    // initialValue: {
-    //     url: 'asset.url'
-    // },
     // fields: [
     //     {
-    //         name: 'url',
-    //         title: 'File\'s url',
-    //         type: 'string'
+    //       name: 'description',
+    //       type: 'string',
+    //       title: 'Description',
+    //       options: {
+    //         isHighlighted: true
+    //       }
     //     }
     // ],
 
     preview: {
         select: {
-            title: 'asset.originalFilename',
-            subtitle: 'asset.url',
+            filename: 'asset.originalFilename',
+            url: 'asset.url',
         },
-        // prepare(selection) {
-        //     const {title, subtitle} = selection
+        // prepare({filename, url}) {
         //     return {
-        //         title: title,
+        //       title: filename,
         //     }
         // },
-        // component: <div>Test</div>
+        component: FileCustomPreview
     }
 }
 
