@@ -1,5 +1,6 @@
-import FileCustomPreview from '../../src/previews/fileCustomPreview'
+import React from 'react'
 import { MdMenu } from "react-icons/md";
+
 
 export default {
     name: 'menu',
@@ -13,31 +14,16 @@ export default {
             type: 'string',
         },
         {
-            name: 'url',
-            title: 'Url',
-            type: 'string',
+            name: 'menuReference',
+            title: 'Menu',
+            type: 'table',
         },
         {
-            name: 'parent',
-            title: 'Parent',
-            type: 'reference',
-            to: {
-                type: 'menu'
-            }
+            title: 'Opening Hours',
+            name: 'openingHours',
+            type: 'array',
+            of: [{type: 'dayAndTime'}]
         },
-    ],
-
-    preview: {
-        select: {
-            title: 'title',
-            parent: 'parent.title'
-        },
-        prepare({title, parent}){
-            return {
-                title: title,
-                subtitle: parent === undefined ? 'Root' : 'Parent: ' + parent
-            }
-        }
-    }
+    ]
 }
 

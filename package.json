@@ -18,6 +18,8 @@
     "lerna": "^3.13.1"
   },
   "dependencies": {
-    "react-icons": "^3.11.0"
+    "lodash": "^4.17.20",
+    "react-icons": "^3.11.0",
+    "react-timepicker": "^2.0.2"
   }
 }
