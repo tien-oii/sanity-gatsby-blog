@@ -48,6 +48,7 @@ class TimeInput extends React.Component {
 
   // 7. Function called whenever an editor changes a value
   handleTimeChange = (hours, minutes) => {
+      console.log('>>>>>>>>> time data: ', hours, minutes)
     const {onChange} = this.props
     if (Number.isInteger(hours) && Number.isInteger(minutes)) {
       const timeAsString = outgoingValue(hours, minutes)

@@ -1,5 +1,7 @@
 import React from 'react'
-import { MdMenu } from "react-icons/md";
+import { MdMenu } from "react-icons/md"
+import TimeInput from '../../components/TimeInput'
+import SimpleCustomInput from '../../components/simpleCustomInput'
 
 
 export default {
@@ -18,11 +20,23 @@ export default {
             title: 'Menu',
             type: 'table',
         },
+        // {
+        //     title: 'Opening Hours',
+        //     name: 'openingHours',
+        //     type: 'array',
+        //     of: [{type: 'dayAndTime'}]
+        // },
         {
             title: 'Opening Hours',
             name: 'openingHours',
-            type: 'array',
-            of: [{type: 'dayAndTime'}]
+            type: 'string',
+            inputComponent: TimeInput
+        },
+        {
+            title: 'Custom Input',
+            name: 'customInput',
+            type: 'string',
+            inputComponent: SimpleCustomInput
         },
     ]
 }
