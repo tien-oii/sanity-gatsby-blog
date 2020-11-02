@@ -19,7 +19,7 @@ import authorReference from './objects/authorReference'
 import fileReference from './objects/fileReference'
 import building from './documents/building'
 import menu from './documents/menu'
-import dayAndTime from './objects/dayAndTime'
+// import dayAndTime from './objects/dayAndTime'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -42,7 +42,7 @@ export default createSchema({
     fileReference,
     building,
     menu,
-    dayAndTime
+    // dayAndTime
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
